@@ -29,9 +29,9 @@ Route::post('/directorio/store', [DirectorioController::class, 'store'])->name('
 
 Route::get('/directorio/buscar', [DirectorioController::class, 'buscar'])->name('directorio.buscar');
 
-Route::get('/directorio/search', [DirectorioController::class, 'search'])->name('directorio.search');
+Route::post('/directorio/search', [DirectorioController::class, 'search'])->name('directorio.search');
 
-Route::get('/directorio/delete', [DirectorioController::class, 'delete'])->name('directorio.delete');
+Route::get('/directorio/destroy/{id}', [DirectorioController::class, 'destroy'])->name('directorio.destroy');
 
 Route::get('/directorio/contactos/mostrar/{id}', [ContactoController::class, 'mostrar'])->name('contacto.mostrar');
 

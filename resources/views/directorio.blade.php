@@ -42,7 +42,7 @@
                                     <a href="{{ route( 'contacto.mostrar', $item->codigoEntrada ) }}" class="btn btn-info">Ver</a>
                                 </td>
                                 <td>
-                                    <a href="{{ route( 'directorio.delete' ) }}" class="btn btn-danger">Eliminar</a>
+                                    <a href="{{ route( 'directorio.destroy', $item->codigoEntrada ) }}" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                             @endforeach

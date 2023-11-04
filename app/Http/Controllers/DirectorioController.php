@@ -35,11 +35,18 @@ class DirectorioController extends Controller
 
     public function search(Request $request){
         $correo = $request->input('correo');
-        return $correo;
+        $directorio = Directorio::where('correo', $correo)->get();
+        return redirect()->route('contacto.mostrar', $directorio->codigoEntrada);
     }
     
 
-    public function delete(){
-        return view('eliminar');
+    public function destroy($id){
+        $directorio = Directorio::find($id);
+        $contactos = Directorio::where('codigoEntrada', $id)->get();
+        foreach($contactos as $contacto){
+            $contacto->delete();
+        }
+        $directorio->delete();
+
     }
 }

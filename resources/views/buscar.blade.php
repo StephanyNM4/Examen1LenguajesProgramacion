@@ -43,10 +43,16 @@
                             <h3 class="card-header">Buscar Entrada</h3>
                             <div class="card-body">
                                 <p class="card-text">
+                                <form method="POST" action="{{ route( 'directorio.search' ) }}">
+                                    @csrf
+                                    
                                     <label for="">Correo</label>
                                     <input type="text" class="form-control" name ="correo">
+
+                                    <button class="btn btn-primary" type="submit">Buscar</button>
+                                </form>
+                                    
                                     <p>
-                                        <a href="{{ route( 'directorio.search' ) }}" class="btn btn-success">Buscar</a>
                                         <a href="{{ route( 'directorio.inicio' ) }}" class="btn btn-info">Regresar</a>
                                     </p>                                    
                                 </p>
